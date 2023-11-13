@@ -1,0 +1,26 @@
+#div-for-screen{
+    display: none;
+}
+
+#assinaturas{
+    margin-top: 20vh;
+    width: 100%;
+    display: flex;
+}
+
+#esquerda, #direita{
+    width: 50%;
+    text-align: center;
+
+}
+
+hr{
+    width: 80%;
+}
+
+h1{
+    font-size: 1em;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    
+}

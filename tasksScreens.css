@@ -1,0 +1,51 @@
+* {
+    overflow-x: hidden;
+
+}
+
+#div-for-print{
+    display: none;
+}
+main{
+    width: 100vw;
+    height: auto;
+
+}
+#div-for-screen{
+    width: 50vw;
+    margin: auto;
+}
+
+#div-for-screen details{
+    margin-top: 2vw;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #f69209;
+    height: auto;
+
+}
+
+summary{
+    padding: 0.5vw 0 0.5vw 1vw;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+label{
+    color: #fff;
+    font-size: 1.5em;
+}
+
+
+#printButton{
+    display: none;
+    margin: auto;
+    border: none;
+    background-color: #f69209;
+    color: #fff;
+    width: 50%;
+    margin-top: 5%;
+    font-size: 1.5em;
+    border-radius: 10px;
+}
