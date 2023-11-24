@@ -22,6 +22,7 @@ main{
     height: 80vh;
     width: 30vw;
     background-image: linear-gradient(#f87127, #f69209);
+    position: relative;
 }
 
 #sectionRight{
@@ -55,7 +56,7 @@ select{
 .selectcontain{
     width: 100%;
     display: block;
-    margin-bottom: 10%;
+    margin-bottom: 8%;
 }
 
 #calcularButton{
@@ -63,9 +64,11 @@ select{
     background-color: white;
     color: #f69209;
     width: 60%;
-    margin-left: 20%;
     font-size: 2em;
     cursor: pointer;
+    position: absolute;
+    bottom: 3%;
+    left: 20%;
 }
 
 #resultados{
@@ -100,4 +103,9 @@ select{
     color: #fff;
     font-size: 2em;
     margin-bottom: 1em;
+}
+
+
+#turnos, #adicionais{
+    display: none;
 }

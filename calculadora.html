@@ -18,21 +18,22 @@
                     <select name="curso" id="curso">
                         <option value="Extensivo">Extensivo</option>
                         <option value="Terceirão">Terceirão</option>
-                        <option value="SemiExtensivo">SemiExtensivo</option>
                     </select>
                     </section>
                     <section class="selectcontain">
                     <label for="sede">Sede:</label>
                     <select name="sede" id="sede">
+                        <option value="vazio">Selecionar</option>
                         <option value="">EAD</option>
                         <option value="Vicente_Machado">Vicente Machado</option>
                         <option value="Hauer">Hauer</option>
+                        <option value="Boa_Vista">Boa Vista (NOVOS)</option>
                         <option value="Boa_Vista">Boa Vista</option>
                     </select>
                     </section>
 
                     <section class="selectcontain">
-                    <label for="parcelamento">Parcelamento:</label>
+                    <label for="parcelamento" class="select">Parcelamento:</label>
                     <select name="parcelamento" id="parcelamento">
                         <option value="13">13x</option>
                         <option value="12">12x</option>
@@ -42,7 +43,7 @@
                     </select>
                     </section>
 
-                    <section class="selectcontain">
+                    <section class="selectcontain" id="turnos">
                     <label for="turno">Turno:</label>
                     <section id="optioncontain">
                     <section class="inputlabel">
@@ -54,11 +55,19 @@
                     <section class="inputlabel">
                         <input type="radio" name="turno" value="noite" id="noite"><h1 onclick="selecionarInput('noite')">Noite</h1>
                     </section>
-                    <section class="inputlabel">
-                        <input type="radio" name="turno" value="EAD" id="EAD"><h1 onclick="selecionarInput('EAD')">EAD</h1>
                     </section>
                     </section>
-                    </section>
+                    <section class="selectcontain" id="adicionais">
+                        <label for="add">Adicional</label>
+                        <section id="optioncontain">
+                        <section class="inputlabel">
+                            <input type="radio" name="add" value="Integral" id="Integral"><h1 onclick="selecionarInputAdd('Integral')">Integral</h1>
+                        </section>
+                        <section class="inputlabel">
+                            <input type="radio" name="add" value="Assinatura" id="Assinatura"><h1 onclick="selecionarInputAdd('Assinatura')">Assinatura</h1>
+                        </section>
+                        </section>
+                        </section>
                     <section class="selectcontain">
                     <label for="desconto">Desconto (%):</label>
                     <input type="number" name="desconto" id="desconto" min="0" max="100" step="0.01">
@@ -66,6 +75,7 @@
                     <input type="button" value="Calcular" id="calcularButton">
                 </form>
                 </section>
+                
             </div>
             <div id="sectionRight">
                 <div id="resultados">
@@ -76,6 +86,7 @@
                 </div>
             </div>
         </div>
+        
     </main>
     <footer></footer>
     <script src="script.js"></script>

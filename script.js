@@ -112,7 +112,7 @@ button.style.display = ''
          varSede: 'Boa_Vista'
      },
      {
-        valorEscola: 9738.36,
+        valorEscola: 4375.80,
         valorMaterial: 4375.80, 
         varCurso: 'Extensivo',
         varTurno: 'EAD',
@@ -162,133 +162,188 @@ button.style.display = ''
         varSede: 'Boa_Vista'
     },
  ];
- 
- document.getElementById('calcularButton').addEventListener('click', function (event) {
-     event.preventDefault();
-     var parcelamento = parseInt(document.getElementById('parcelamento').value, 10);
-     var curso = document.getElementById('curso').value;
-     let sede = document.getElementById('sede').value;
-     let turno = document.querySelector('input[name="turno"]:checked').value;
-     let desconto = document.getElementById('desconto').value
-     let integral = 6435.00;
-     let assinatura = 1201.20
-     console.log(curso);
-     console.log(turno);
-     console.log(sede)
-     console.log(desconto)
 
 
-     let valorTotalFormatado = null;
-     let valorTotalFormatadoIntegral = null;
-     let valorTotalFormatadoAssinatura = null;
-
-
-     if(desconto != 0){
-     
-
-             for (let i = 0; i < data.length; i++) {
-                if (data[i].varCurso === curso && data[i].varSede === sede && data[i].varTurno === turno) {
-                    var valorEscola = data[i].valorEscola;
-                    var valorMaterial = data[i].valorMaterial;
-                    console.log('entrou', desconto)
-                    let valorTotal = ((valorEscola * (1 - (desconto/100))) + valorMaterial) / parcelamento
-                    let valorIntegral = ((valorEscola * (1- desconto/100)) + valorMaterial + integral) / parcelamento
-                    let valorAssinatura = ((valorEscola * (1- desconto/100)) + valorMaterial + assinatura) / parcelamento
-                    valorTotalFormatado = valorTotal.toFixed(2).replace('.', ',');
-                    valorTotalFormatadoIntegral = valorIntegral.toFixed(2).replace('.', ',');
-                    valorTotalFormatadoAssinatura = valorAssinatura.toFixed(2).replace('.', ',');
-       
-                    break;
-                }
-            }
-    
-    }else if (parcelamento != 1 ){
-        for (let i = 0; i < data.length; i++) {
-           
-            if (data[i].varCurso === curso && data[i].varSede === sede && data[i].varTurno === turno) { 
-                if(turno === "EAD"){
-                    let valorEscola = data[i].valorEscola;
-                    let valorMaterial = data[i].valorMaterial;
-       
-                    let valorTotal = (valorEscola + valorMaterial) / parcelamento
-                    valorTotalFormatado = valorTotal.toFixed(2).replace('.', ',');
-                    valorTotalFormatadoIntegral = "Não existe"
-                    valorTotalFormatadoAssinatura = "Não existe"
-       
-                    break;
-                }else{
-                let valorEscola = data[i].valorEscola;
-                let valorMaterial = data[i].valorMaterial;
-   
-                let valorTotal = (valorEscola + valorMaterial) / parcelamento
-                let valorIntegral = (valorEscola + valorMaterial + integral) / parcelamento
-                let valorAssinatura = (valorEscola + valorMaterial + assinatura) / parcelamento
-                valorTotalFormatado = valorTotal.toFixed(2).replace('.', ',');
-                valorTotalFormatadoIntegral = valorIntegral.toFixed(2).replace('.', ',');
-                valorTotalFormatadoAssinatura = valorAssinatura.toFixed(2).replace('.', ',');
-   
-                break;
-                }
-            }
-        }
-
-    }else{
-        for (let i = 0; i < data.length; i++) {
-            if (data[i].varCurso === curso && data[i].varSede === sede && data[i].varTurno === turno) {
-                var valorEscola = data[i].valorEscola;
-                var valorMaterial = data[i].valorMaterial;
-   
-   
-                let valorTotal = (valorEscola + valorMaterial) * 0.96;
-                let valorIntegral = (valorEscola + valorMaterial + integral) *0.96
-                let valorAssinatura = (valorEscola + valorMaterial + assinatura) * 0.96
-                valorTotalFormatado = valorTotal.toFixed(2).replace('.', ',');
-                valorTotalFormatadoIntegral = valorIntegral.toFixed(2).replace('.', ',');
-                valorTotalFormatadoAssinatura = valorAssinatura.toFixed(2).replace('.', ',');
-   
-                break;
-            }
-        }
-        
+ document.addEventListener("keydown", function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        calcular();
     }
+});
  
-     if (valorTotalFormatado !== null ) {
-         console.log("Valor total: " + valorTotalFormatado);
-         document.getElementById('primeiroValor').textContent = (parcelamento + "x de " + valorTotalFormatado)
-         document.getElementById('segundoValor').textContent = ("Com Integral:" + parcelamento + "x de " + valorTotalFormatadoIntegral)
-         document.getElementById('terceiroValor').textContent = ("Com Assinatura" + parcelamento + "x de " + valorTotalFormatadoAssinatura)
-     }
-     
-     if(valorTotalFormatadoIntegral === "Não existe"){
-         document.getElementById('segundoValor').textContent = ("Com Integral: " + valorTotalFormatadoIntegral)
-     }
-     
-     if(valorTotalFormatadoAssinatura === "Não existe"){
-        document.getElementById('terceiroValor').textContent = ("Com Assinatura: " + valorTotalFormatadoAssinatura)
-     }
+ 
+document.getElementById('sede').addEventListener('change', troca_display)
 
-     if(valorTotalFormatado === null){
-        document.getElementById('primeiroValor').textContent = ("Erro")
-        document.getElementById('segundoValor').textContent = ("")
-        document.getElementById('terceiroValor').textContent = ("")
-     }
+function troca_display (event) {
+    event.preventDefault();
+    let turnos = document.getElementById("turnos");
+    let sede = document.getElementById('sede').value;
+    let adicionais = document.getElementById("adicionais");
 
-     if(turno === "EAD"){
-        document.getElementById('calcTitle').innerHTML = ("Valores do Online em " + parcelamento + " X")
-     }
- });
+    if(sede != "" && sede != "vazio"){
+        turnos.style.display = "block"
+        adicionais.style.display = "block"
+    }else{
+        turnos.style.display = ""
+        adicionais.style.display = ""
+
+    }
+};
 
 
 
+
+
+let calc = document.getElementById("calcularButton")
+calc.addEventListener('click', calcular)
+
+
+function calcular () {
+    let desconto = document.getElementById('desconto').value
+    let parcelamento = parseInt(document.getElementById('parcelamento').value, 10);
+    let adicionaisElement = document.querySelector('input[name="add"]:checked');
+    let adicionais = 0;
+
+    if (adicionaisElement !== null) {
+        adicionais = adicionaisElement.value
+        if (adicionais == "Integral"){
+            adicionais = 536.25
+        }else{
+            adicionais = 100.10
+        }
+    }else{
+        adicionais = 0
+    }
+console.log(adicionais)
+    if (desconto > 100){
+        alert("desconto incomum")
+    }
+    else if(desconto == '' &&  parcelamento > 1){
+        sem_desconto(parcelamento, adicionais)
+    }else if(desconto != '' && parcelamento > 1){
+        com_desconto(parcelamento,desconto, adicionais)
+    }else if(desconto == '' && parcelamento == 1){
+        a_vista(parcelamento, adicionais)
+    }else if(desconto != '' && parcelamento == 1){
+        a_vista_com_desconto(parcelamento,desconto, adicionais)
+    }
+
+}
+console.log(adicionais)
+
+
+
+function sem_desconto(parcelamento,adicionais){
+    let curso = document.getElementById('curso').value;
+    let sede = document.getElementById('sede').value;
+     if(sede === ''){
+        for (let i = 0; i < data.length; i++){
+            if (data[i].varCurso === curso && data[i].varSede === sede && data[i]) {
+                console.log(adicionais)
+                let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(((data[i].valorEscola+data[i].valorMaterial ) / parcelamento) + adicionais))
+                document.getElementById('primeiroValor').textContent = (parcelamento + " x de " + mensalidade)
+            }
+        }
+     }else{
+        let turno = document.querySelector('input[name="turno"]:checked').value;
+        for (let i = 0; i < data.length; i++){
+            if (data[i].varCurso === curso && data[i].varSede === sede && data[i] && data[i].varTurno === turno) {
+                let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(((data[i].valorEscola+data[i].valorMaterial ) / parcelamento) + adicionais))
+                document.getElementById('primeiroValor').textContent = (parcelamento + " x de " + mensalidade)
+            }
+    }
+    
+     }
+
+}
+
+function com_desconto(parcelamento,desconto, adicionais){
+    let curso = document.getElementById('curso').value;
+    let sede = document.getElementById('sede').value;
+     if(sede === ''){
+        for (let i = 0; i < data.length; i++){
+            if (data[i].varCurso === curso && data[i].varSede === sede && data[i]) {
+                let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(((data[i].valorEscola * (1- desconto/100)) +data[i].valorMaterial) / parcelamento + adicionais))
+
+                document.getElementById('primeiroValor').textContent = (parcelamento + " x de " + mensalidade)
+            }
+        }
+     }else{
+        let turno = document.querySelector('input[name="turno"]:checked').value;
+        for (let i = 0; i < data.length; i++){
+            if (data[i].varCurso === curso && data[i].varSede === sede && data[i] && data[i].varTurno === turno) {
+                let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(((data[i].valorEscola * (1- desconto/100)) +data[i].valorMaterial) / parcelamento + adicionais))
+                document.getElementById('primeiroValor').textContent = (parcelamento + " x de " + mensalidade)
+            }
+    }
+    
+     }
+
+}
+
+
+function a_vista(parcelamento, adicionais){
+    let curso = document.getElementById('curso').value;
+    let sede = document.getElementById('sede').value;
+     if(sede === ''){
+        for (let i = 0; i < data.length; i++){
+            if (data[i].varCurso === curso && data[i].varSede === sede && data[i]) {
+                let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format((data[i].valorEscola+data[i].valorMaterial) * 0.96 / parcelamento + adicionais))
+                document.getElementById('primeiroValor').textContent = (parcelamento + " x de " + mensalidade)
+            }
+        }
+     }else{
+        let turno = document.querySelector('input[name="turno"]:checked').value;
+        for (let i = 0; i < data.length; i++){
+            if (data[i].varCurso === curso && data[i].varSede === sede && data[i] && data[i].varTurno === turno) {
+                let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format((data[i].valorEscola+data[i].valorMaterial) * 0.96 / parcelamento + adicionais))
+                document.getElementById('primeiroValor').textContent = (parcelamento + " x de " + mensalidade)
+            }
+    }
+    
+     }
+
+}
+
+function a_vista_com_desconto(parcelamento, desconto, adicionais){
+    let curso = document.getElementById('curso').value;
+    let sede = document.getElementById('sede').value;
+     if(sede === ''){
+        for (let i = 0; i < data.length; i++){
+            if (data[i].varCurso === curso && data[i].varSede === sede && data[i]) {
+                let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(((data[i].valorEscola * (1 - desconto/100)) + (data[i].valorMaterial * 0.96)) + adicionais))
+                document.getElementById('primeiroValor').textContent = (parcelamento + " x de " + mensalidade)
+            }
+        }
+     }else{
+        let turno = document.querySelector('input[name="turno"]:checked').value;
+        for (let i = 0; i < data.length; i++){
+            if (data[i].varCurso === curso && data[i].varSede === sede && data[i] && data[i].varTurno === turno) {
+                let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(((data[i].valorEscola * (1 - desconto/100)) + (data[i].valorMaterial * 0.96)) + adicionais))
+                document.getElementById('primeiroValor').textContent = (parcelamento + " x de " + mensalidade)
+            }
+    }
+    
+     }
+
+}
 
 
  function selecionarInput(id) {
-    var input = document.getElementById(id);
+    let input = document.getElementById(id);
     if (input) {
         input.checked = true;
     }
 }
 
+
+function selecionarInputAdd(id) {
+    let input = document.getElementById(id);
+
+    if (input) {
+        input.checked = !input.checked;
+    }
+}
 
 
 
