@@ -207,9 +207,9 @@ function calcular () {
     if (adicionaisElement !== null) {
         adicionais = adicionaisElement.value
         if (adicionais == "Integral"){
-            adicionais = 536.25
+            adicionais = 6435.00
         }else{
-            adicionais = 100.10
+            adicionais = 1201.20
         }
     }else{
         adicionais = 0
@@ -240,7 +240,7 @@ function sem_desconto(parcelamento,adicionais){
         for (let i = 0; i < data.length; i++){
             if (data[i].varCurso === curso && data[i].varSede === sede && data[i]) {
                 console.log(adicionais)
-                let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(((data[i].valorEscola+data[i].valorMaterial ) / parcelamento) + adicionais))
+                let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(((data[i].valorEscola+data[i].valorMaterial) / parcelamento) ))
                 document.getElementById('primeiroValor').textContent = (parcelamento + " x de " + mensalidade)
             }
         }
@@ -248,7 +248,7 @@ function sem_desconto(parcelamento,adicionais){
         let turno = document.querySelector('input[name="turno"]:checked').value;
         for (let i = 0; i < data.length; i++){
             if (data[i].varCurso === curso && data[i].varSede === sede && data[i] && data[i].varTurno === turno) {
-                let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(((data[i].valorEscola+data[i].valorMaterial ) / parcelamento) + adicionais))
+                let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(((data[i].valorEscola+data[i].valorMaterial + adicionais) / parcelamento) ))
                 document.getElementById('primeiroValor').textContent = (parcelamento + " x de " + mensalidade)
             }
     }
@@ -263,8 +263,8 @@ function com_desconto(parcelamento,desconto, adicionais){
      if(sede === ''){
         for (let i = 0; i < data.length; i++){
             if (data[i].varCurso === curso && data[i].varSede === sede && data[i]) {
-                let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(((data[i].valorEscola * (1- desconto/100)) +data[i].valorMaterial) / parcelamento + adicionais))
-
+                let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(((data[i].valorEscola * (1- desconto/100)) +data[i].valorMaterial) / parcelamento ))
++ adicionais
                 document.getElementById('primeiroValor').textContent = (parcelamento + " x de " + mensalidade)
             }
         }
@@ -272,7 +272,7 @@ function com_desconto(parcelamento,desconto, adicionais){
         let turno = document.querySelector('input[name="turno"]:checked').value;
         for (let i = 0; i < data.length; i++){
             if (data[i].varCurso === curso && data[i].varSede === sede && data[i] && data[i].varTurno === turno) {
-                let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(((data[i].valorEscola * (1- desconto/100)) +data[i].valorMaterial) / parcelamento + adicionais))
+                let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(((data[i].valorEscola * (1- desconto/100)) +data[i].valorMaterial + adicionais) / parcelamento ))
                 document.getElementById('primeiroValor').textContent = (parcelamento + " x de " + mensalidade)
             }
     }
@@ -288,7 +288,7 @@ function a_vista(parcelamento, adicionais){
      if(sede === ''){
         for (let i = 0; i < data.length; i++){
             if (data[i].varCurso === curso && data[i].varSede === sede && data[i]) {
-                let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format((data[i].valorEscola+data[i].valorMaterial) * 0.96 / parcelamento + adicionais))
+                let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format((data[i].valorEscola+data[i].valorMaterial) * 0.96 / parcelamento))
                 document.getElementById('primeiroValor').textContent = (parcelamento + " x de " + mensalidade)
             }
         }
@@ -311,7 +311,7 @@ function a_vista_com_desconto(parcelamento, desconto, adicionais){
      if(sede === ''){
         for (let i = 0; i < data.length; i++){
             if (data[i].varCurso === curso && data[i].varSede === sede && data[i]) {
-                let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(((data[i].valorEscola * (1 - desconto/100)) + (data[i].valorMaterial * 0.96)) + adicionais))
+                let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(((data[i].valorEscola * (1 - desconto/100)) + (data[i].valorMaterial * 0.96))))
                 document.getElementById('primeiroValor').textContent = (parcelamento + " x de " + mensalidade)
             }
         }
