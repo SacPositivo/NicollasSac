@@ -1,12 +1,17 @@
-document.addEventListener("DOMContentLoaded", function() {
-    let checkbox = document.getElementById('trainemaentTaskScreen-85');
-    let button = document.getElementById('printButton')
+var pdfIframes = document.querySelectorAll('.pdfcontainer iframe');
 
-    checkbox.addEventListener("change", function() {
-        if (checkbox.checked) {
-            button.style.display = 'block';
-        } else {
-            button.style.display = 'none';
-        }
-    });
-});
+        pdfIframes.forEach(function(pdfIframe) {
+            pdfIframe.addEventListener('click', function () {
+                if (pdfIframe.requestFullscreen) {
+                    pdfIframe.requestFullscreen();
+                } else if (pdfIframe.mozRequestFullScreen) {
+                    pdfIframe.mozRequestFullScreen();
+                } else if (pdfIframe.webkitRequestFullscreen) {
+                    pdfIframe.webkitRequestFullscreen();
+                } else if (pdfIframe.msRequestFullscreen) {
+                    pdfIframe.msRequestFullscreen();
+                }
+            });
+        });
+
+

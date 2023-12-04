@@ -1,4 +1,4 @@
-#div-for-screen{
+#left{
     display: none;
 }
 
@@ -6,6 +6,9 @@
     margin-top: 20vh;
     width: 100%;
     display: flex;
+}
+main{
+    display: none;
 }
 
 #esquerda, #direita{

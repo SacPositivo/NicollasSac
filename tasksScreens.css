@@ -1,51 +1,136 @@
 * {
-    overflow-x: hidden;
-
+    margin: 0;
+    padding: 0;
 }
 
-#div-for-print{
+#div-for-print {
     display: none;
 }
 main{
-    width: 100vw;
-    height: auto;
-
-}
-#div-for-screen{
-    width: 50vw;
-    margin: auto;
+    display: flex;
 }
 
-#div-for-screen details{
-    margin-top: 2vw;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 5px;
-    background-color: #f69209;
-    height: auto;
-
-}
-
-summary{
-    padding: 0.5vw 0 0.5vw 1vw;
-    font-size: 1.5em;
-    color: #fff;
-}
-
-label{
-    color: #fff;
+label {
     font-size: 1.5em;
 }
 
-
-#printButton{
-    display: none;
-    margin: auto;
+#printButton {
+    margin: 50% 0 0 0;
     border: none;
-    background-color: #f69209;
-    color: #fff;
-    width: 50%;
+    background-color: #ffffff;
+    color: #f69209;
+    width: 40%;
     margin-top: 5%;
     font-size: 1.5em;
     border-radius: 10px;
+}
+
+#left {
+    width: 80vw;
+    height: 100vh;
+}
+
+label {
+    color: #ffffff;
+    display: block;
+}
+
+#aside1 {
+    width: 20vw;
+    height: 100vh;
+    background-color: #f69209;
+    position: fixed;
+    margin-left: 80vw;
+    text-align: center;
+}
+
+aside section {
+    width: 100%;
+    text-align: center;
+}
+
+input {
+    width: 80%;
+    height: 10%;
+    border-radius: 2px;
+}
+
+#asideCenter {
+    margin-top: 50%;
+}
+
+.pdfdiv {
+    width: 100%;
+    display: flex;
+    height: 30vh;
+    justify-content: space-evenly;
+    margin-top: 5%;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: #f69209 3px solid;
+}
+
+.pdfcontainer {
+    width: 45%;
+    height: 100%;
+}
+
+.bf {
+    display: block;
+    border: none;
+    background-color: #f69209;
+    color: aliceblue;
+    font-size: 1.3em;
+}
+
+.iframe-container {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 9999;
+}
+
+.fullscreen-iframe {
+    width: 100%;
+    height: 100%;
+    border: #f69209 3px solid;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 2em;
+}
+
+.block {
+    display: block;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+}
+
+.pdfdiv.grid-item-1 {
+    grid-row: 1;
+}
+
+.pdfdiv.grid-item-2 {
+    grid-row: 2;
+}
+
+.pdfdiv.grid-item-3 {
+    grid-row: 3;
+}
+
+
+button{
+    cursor: pointer;
 }
