@@ -134,3 +134,12 @@ h1 {
 button{
     cursor: pointer;
 }
+
+.btenome{
+    display: flex;
+}
+
+.btenome p {
+    margin-left: 25px;
+    font-size: 1.3em;
+}
