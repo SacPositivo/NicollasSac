@@ -293,14 +293,18 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.getElementById('primeiroValor').textContent = ("Desconto: " + descontoP.toFixed(2) + "%")
                 }
             }
-        //  }else{
-        //     let turno = document.querySelector('input[name="turno"]:checked').value;
-        //     for (let i = 0; i < data.length; i++){
-        //         if (data[i].varCurso === curso && data[i].varSede === sede && data[i] && data[i].varTurno === turno) {
-        //             let mensalidade =  (new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(((data[i].valorEscola * (1- desconto/100)) +data[i].valorMaterial + adicionais) / parcelamento ))
-        //             document.getElementById('primeiroValor').textContent = (parcelamento + " x de " + mensalidade)
-        //         }
-        // }
+         }else{
+            let turno = document.querySelector('input[name="turno"]:checked').value;
+            for (let i = 0; i < data.length; i++){
+                if (data[i].varCurso === curso && data[i].varSede === sede && data[i] && data[i].varTurno === turno) {
+                    let VyE = data[i].valorEscola / parcelamento
+                    let VxE = (desconto - (data[i].valorMaterial - adicionais / parcelamento))
+                    let descontoP = ((VxE - VyE) / VyE) * 100
+                    console.log(descontoP, VyE, VxE)
+                    document.getElementById('primeiroValor').textContent = ("Desconto: " + descontoP.toFixed(2) + "%")
+                
+                }
+        }
         
         }
        }
