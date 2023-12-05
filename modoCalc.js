@@ -289,18 +289,25 @@ document.addEventListener("DOMContentLoaded", function () {
                     let VyE = data[i].valorEscola / parcelamento
                     let VxE = (desconto - (data[i].valorMaterial / parcelamento))
                     let descontoP = ((VxE - VyE) / VyE) * 100
-                    console.log(descontoP, VyE, VxE)
+                    console.log(descontoP, VyE, VxE,"valo")
                     document.getElementById('primeiroValor').textContent = ("Desconto: " + descontoP.toFixed(2) + "%")
                 }
             }
          }else{
             let turno = document.querySelector('input[name="turno"]:checked').value;
             for (let i = 0; i < data.length; i++){
-                if (data[i].varCurso === curso && data[i].varSede === sede && data[i] && data[i].varTurno === turno) {
+                if (data[i].varCurso === curso && data[i].varSede === sede && data[i].varTurno === turno) {
                     let VyE = data[i].valorEscola / parcelamento
-                    let VxE = (desconto - (data[i].valorMaterial - adicionais / parcelamento))
+                    let add = adicionais / parcelamento
+                    let VxE = (desconto - (data[i].valorMaterial / parcelamento) - add)
                     let descontoP = ((VxE - VyE) / VyE) * 100
-                    console.log(descontoP, VyE, VxE)
+                    console.log(data[i].varCurso)
+                    console.log(data[i].valorEscola)
+                    console.log("Parcelado " + VyE)
+                    console.log(data[i].valorMaterial)
+                    console.log("Desconto menos material " + VxE)
+                    console.log(descontoP)
+                    console.log(VxE)
                     document.getElementById('primeiroValor').textContent = ("Desconto: " + descontoP.toFixed(2) + "%")
                 
                 }
