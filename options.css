@@ -1,19 +1,26 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-body{
+
+body {
     background-image: linear-gradient(#f87127, #f69209);
+    font-family: 'Arial', sans-serif;
     scrollbar-width: none;
 }
-main{
+
+main {
     text-align: center;
 }
-h1{
+
+h1 {
     color: #fff;
     font-size: 4em;
+    margin-bottom: 20px;
 }
-#titlecontain{
+
+#titlecontain {
     width: 60%;
     height: 15vh;
     position: absolute;
@@ -22,58 +29,75 @@ h1{
     transform: translate(-50%, -50%);
 }
 
-#hrzinho{
+#hrzinho {
     border: 2px solid #fff;
     background-color: #fff;
     margin-top: 2%;
 }
-header{
+
+header {
     position: relative;
-    height: 30VH;
+    height: 30vh;
     width: 100%;
 }
 
-.lineflex{
+.lineflex {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 10vh;
 }
 
-.cardoption{
+.cardoption {
     width: 20vw;
     height: 20vw;
     background-color: #fff;
     border: none;
     text-align: center;
- 
+    border-radius: 10px;
+    margin: 0 10px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
 }
 
-.cardoption > h1{
+.cardoption:hover {
+    transform: scale(1.05);
+}
+
+.cardoption > h1 {
     color: #f69209;
     font-size: 2.5em;
+    margin-top: 10px;
 }
 
-a{
+a {
     text-decoration: none;
     color: #f69209;
     font-size: 1.5em;
 }
 
-
-.resumo{
+.resumo {
     width: 20vw;
-    height: 60%;
+    height: 50%;
     margin-top: 5%;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
 }
 
-#infocursosdiv{
+.cardoption:hover .resumo {
+    height: 60%;
+}
+
+#infocursosdiv {
     display: none;
     height: auto;
     width: 80vw;
     margin-left: 10vw;
+    border-radius: 10px;
 }
 
-#infocursosdiv p{
+#infocursosdiv p {
     font-size: 1.5em;
     letter-spacing: 0.1em;
     line-height: 1.3em;
@@ -82,9 +106,7 @@ a{
     padding: 3% 0 3% 0;
 }
 
-
-
-#volta{
+#volta {
     position: absolute;
     left: 5%;
     top: 40%;
@@ -98,21 +120,19 @@ a{
     cursor: pointer;
 }
 
-
-.vermais{
+.vermais {
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
 
-
-.resumo p{
+.resumo p {
     text-align: justify;
     margin: 0 20px 0 20px;
     font-size: 1em;
 }
 
-#calc{
+#calc {
     width: 10%;
     height: 50px;
     border: none;
@@ -123,16 +143,13 @@ a{
     cursor: pointer;
 }
 
-
-#textContaininfo{
+#textContaininfo,
+#textContaininfo2 {
     width: 90%;
     height: auto;
-    background-color: #FFAA24;
-    border-radius: 20px;margin: auto;
-}
-
-#textContaininfo2{
-    width: 90%;
-    height: auto;
-    border-radius: 20px;margin: auto;
+    border-radius: 20px;
+    margin: auto;
+    background-color: #ffaa24;
+    margin-bottom: 20px;
+    padding: 20px;
 }

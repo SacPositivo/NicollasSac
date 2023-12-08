@@ -1,4 +1,21 @@
+function selecionarInput(id) {
+    let input = document.getElementById(id);
+    if (input) {
+        input.checked = true;
+    }
+}
+
+
+function selecionarInputAdd(id) {
+    let input = document.getElementById(id);
+
+    if (input) {
+        input.checked = !input.checked;
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+  
     let bt1 = document.getElementById("bt1");
     let bt2 = document.getElementById("bt2");
     let state = 0;
@@ -9,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function mudarpara1() {
         bt2.style.backgroundColor = 'gray';
-        bt1.style.backgroundColor = 'transparent'
+        bt1.style.backgroundColor = '#f69209'
         state = 0;
         mudardesc.innerHTML = 'Desconto (%):'
 
@@ -17,9 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function mudarpara2() {
         bt1.style.backgroundColor = 'gray'; 
-        bt2.style.backgroundColor = 'transparent'
+        bt2.style.backgroundColor = '#f69209'
         state = 1
-        mudardesc.innerHTML = 'Valor com desconto'
+        mudardesc.innerHTML = 'Valor com desconto:'
     }
 
 
@@ -122,6 +139,18 @@ document.addEventListener("DOMContentLoaded", function () {
         
         
        document.getElementById('sede').addEventListener('change', troca_display)
+
+
+       function verify(event){
+        let turnos = document.getElementById("turnos");
+        let sede = document.getElementById('sede').value;
+        if( sede === "Boa_Vista" && turnos != "manha" || sede != "Hauer" && turnos === "manha" ){
+            document.getElementById('primeiroValor').textContent = 'Erro, turno inexistente'
+        }else{
+            troca_display();
+        }
+
+       }
        
        function troca_display (event) {
            event.preventDefault();
@@ -148,6 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
        
        
        function calcular () {
+        document.getElementById('primeiroValor').textContent = 'Erro, turno inexistente'
            let desconto = document.getElementById('desconto').value
            let parcelamento = parseInt(document.getElementById('parcelamento').value, 10);
            let adicionaisElement = document.querySelector('input[name="add"]:checked');
@@ -299,15 +329,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (data[i].varCurso === curso && data[i].varSede === sede && data[i].varTurno === turno) {
                     let VyE = data[i].valorEscola / parcelamento
                     let add = adicionais / parcelamento
-                    let VxE = (desconto - (data[i].valorMaterial / parcelamento) - add)
+                    console.log(add)
+                    let VxE = ((desconto - add) - (data[i].valorMaterial / parcelamento))
                     let descontoP = ((VxE - VyE) / VyE) * 100
-                    console.log(data[i].varCurso)
-                    console.log(data[i].valorEscola)
-                    console.log("Parcelado " + VyE)
-                    console.log(data[i].valorMaterial)
-                    console.log("Desconto menos material " + VxE)
-                    console.log(descontoP)
-                    console.log(VxE)
                     document.getElementById('primeiroValor').textContent = ("Desconto: " + descontoP.toFixed(2) + "%")
                 
                 }
@@ -317,19 +341,5 @@ document.addEventListener("DOMContentLoaded", function () {
        }
        
        
-        function selecionarInput(id) {
-           let input = document.getElementById(id);
-           if (input) {
-               input.checked = true;
-           }
-       }
-       
-       
-       function selecionarInputAdd(id) {
-           let input = document.getElementById(id);
-       
-           if (input) {
-               input.checked = !input.checked;
-           }
-       }
+ 
 });

@@ -1,70 +1,89 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     overflow-x: hidden;
     overflow-y: auto;
 }
-body{
+
+body {
     background-image: linear-gradient(#f87127, #f69209);
+    font-family: 'Arial', sans-serif;
+    color: #ecf0f1;
+    margin: 0;
+}
+
+main {
     width: 100vw;
-
-}
-main{
-    width: 100vw;
-    height: 300vh;
-}
-
-#details-content{
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%);
-
-}
-
-
-.one-details{
-    background-color: #fff;
-    margin:  0 0 1.5vw 0 ;
-    border-radius: 10px;
+    height: 100vh;
     display: flex;
-    width: 80vw;
-
+    align-items: center;
+    justify-content: center;
 }
-.one-details summary{
+
+#details-content {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    animation: fadeIn 0.5s ease-in-out;
+    margin: 20px;
+}
+
+.one-details {
+    margin-bottom: 20px;
+}
+
+.one-details summary, .one-details .second-details summary {
     color: #f69209;
     font-size: 1.5em;
     cursor: pointer;
-    width: 80vw;
-    padding: 1vw;
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #f69209;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
 }
 
-.one-details .second-details summary{
+.one-details summary:hover, .one-details .second-details summary:hover {
+    background-color: #f69209;
+    color: #ffffff;
+}
+
+.detail-text, .detail-text-second {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.section-datail {
+    background-color: #f69209;
+    border-radius: 10px;
+    padding: 15px;
+    margin-left: 20px;
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.one-details[open] .section-datail {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.detail-text-second {
+    margin: 10px 0;
+    font-size: 1.2em;
     color: #fff;
-    font-size: 1.5em;
-    cursor: pointer;
-    width: 80vw;
-    margin: 1vw 1vw 0 4vw;
 }
 
-.detail-text{
-    margin: 1vw;
-    color: aliceblue;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
-
-.section-datail{
-    background-color: orange;
-    width: 80vw;
-    border-radius:10px;
-
-}
-
-.detail-text-second{
-    margin: 1vw 0 0 8vw;
-    font-size: 1.5em;
-    color: aliceblue;
-}
-
-
-
-

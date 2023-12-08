@@ -1,138 +1,152 @@
-*{
+/* Reset de estilos */
+body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
 }
-main{
-    align-items: center;
-    justify-content: center;
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f2f2f2;
+    color: #333;
 }
 
-#sectionContainer{
-    width: 80vw;
-    height: 80vh;
+#primeiroValor{
+    color: black;
+    font-weight: bold;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#sectionContainer {
+    display: flex;
+    gap: 20px;
+}
+
+#sectionLeft, #sectionRight {
+    flex: 1;
+}
+
+#buttons {
     display: flex;
     justify-content: space-between;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-bottom: 20px;
 }
 
-#sectionLeft{
-    height: 80vh;
-    width: 30vw;
-    background-image: linear-gradient(#f87127, #f69209);
-    position: relative;
-}
-
-#sectionRight{
-    height: 80vh;
-    width: 47vw;
-    background-image: linear-gradient(#f87127, #f69209);
-    position: relative;
-}
-
-#resultado, .valor{
-    color: #fff;
-    font-size: 2em;
-}
-
-
-/* inputs */
-#inputscontainer{
-    width: 80%;
-    margin-left: 10%;
-    margin-top: 10%;
-}
-label{
-    color: #fff;
-    font-size: 2em;
-}
-
-select{
-    font-size: 1.5em;
-}
-
-.selectcontain{
-    width: 100%;
-    display: block;
-    margin-bottom: 8%;
-}
-
-#calcularButton{
-    border: none;
-    background-color: white;
-    color: #f69209;
-    width: 60%;
-    font-size: 2em;
-    cursor: pointer;
-    position: absolute;
-    bottom: 3%;
-    left: 20%;
-}
-
-#resultados{
-    width: 80%;
-    height: 80%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.inputlabel{
-    display: flex;
-    align-items: center;
-}
-
-.inputlabel> h1{
-    color: #fff;
-    font-size: 1.5em;
-    margin-right: 0.5em;
-    margin-left: 0.4em;
-    cursor: pointer;
-}
-
-#optioncontain{
-    display: flex;
-}
-
-
-
-.standardValueText{
-    color: #fff;
-    font-size: 2em;
-    margin-bottom: 1em;
-}
-
-
-#turnos, #adicionais{
-    display: none;
-}
-#buttons{
-    width: 47vw;
-}
-
-.bt{
-    width: 10%;
-    margin-top: 1px;
-}
-
-#bt1{
-    background-color: transparent;
-    color: #fff;
-    border-bottom: none;
-    border-left: none;
-    border-top: #fff 3px solid;
-    border-right: #fff 3px solid;
-}
-
-#bt2{
+.bt {
+    padding: 15px 30px;
     background-color: gray;
     color: #fff;
-    border-bottom: none;
-    border-left: none;
-    border-top: #fff 3px solid;
-    border-right: #fff 3px solid;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
 
+.bt:hover {
+    background-color: #d17c06;
+}
+
+#calcForm {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+
+.selectcontain select, .inputlabel input, .adicionais input {
+    width: calc(100% - 10px);
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.inputlabel {
+    display: flex;
+    margin-right: 50px;
+    font-size: 1.3em;
+    margin-top: 10px;
+}
+
+#optioncontain {
+    display: flex;
+}
+
+.adicionais {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.adicionais input {
+    width: auto;
+}
+
+#calcularButton {
+    padding: 15px;
+    background-color: #f69209;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+    width: 50%;
+    margin: 40px 0 0 130px;
+    transition: background-color 0.3s ease;
+}
+
+#calcularButton:hover {
+    background-color: #d17c06;
+}
+
+#resultados {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.standardValueText {
+    font-size: 1.5em;
+    margin: 15px 0;
+}
+
+#calcTitle {
+    font-weight: bold;
+    font-size: 24px;
+    color: #333;
+}
+
+#desconto{
+    margin: 20px 0 30px 0;
+    font-size: 1.5em;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsividade */
+@media only screen and (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+}
