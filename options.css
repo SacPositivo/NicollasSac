@@ -19,7 +19,12 @@ h1 {
     font-size: 4em;
     margin-bottom: 20px;
 }
-
+#arvore img{
+    position: fixed;
+    width: 10vw;
+    bottom: 15px;
+    right: 15px;
+}
 #titlecontain {
     width: 60%;
     height: 15vh;

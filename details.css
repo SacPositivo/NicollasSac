@@ -12,12 +12,16 @@ body {
     color: #ecf0f1;
     margin: 0;
 }
-
+#arvore img{
+    position: absolute;
+    width: 10vw;
+    bottom: 15px;
+    right: 15px;
+}
 main {
     width: 100vw;
     height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
@@ -26,7 +30,7 @@ main {
     border-radius: 10px;
     padding: 20px;
     width: 90%;
-    max-width: 800px;
+    max-width: 1080px;
     animation: fadeIn 0.5s ease-in-out;
     margin: 20px;
 }

@@ -15,7 +15,12 @@ body {
 main {
     padding: 20px;
 }
-
+#arvore img{
+    position: absolute;
+    width: 10vw;
+    bottom: 15px;
+    right: 15px;
+}
 #details-content {
     background-color: #ffffff;
     border-radius: 10px;

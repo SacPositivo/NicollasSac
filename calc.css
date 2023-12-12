@@ -9,11 +9,21 @@ body {
     line-height: 1.6;
     background-color: #f2f2f2;
     color: #333;
+ 
 }
-
+#arvore img{
+    position: absolute;
+    width: 10vw;
+    bottom: 15px;
+    right: 15px;
+}
 #primeiroValor{
     color: black;
     font-weight: bold;
+}
+
+#turnos , #adicionais{
+    display: none;
 }
 
 main {
@@ -50,7 +60,9 @@ main {
     border-radius: 8px;
     transition: background-color 0.3s ease;
 }
-
+#bt1{
+    background-color: #f69209;
+}
 .bt:hover {
     background-color: #d17c06;
 }
