@@ -4,40 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="arv.js"></script>
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <title>CIA</title>
 </head>
 <body>
+    <header>
+        <img src="Logo_CursoPositivo_HOR_White.png" alt="">
+        <ul>
+          <li id="info"><a href="options.html">informações</a></li>
+          <li><a href="calculadora.html">valores</a></li>
+        </ul>
+    </header>
     <main>
-        <div id="sectionContainer">
-            <div id="sectionLeft">
-                <section id="leftLogo">
-                    <img id="logoL" src="Logo_CursoPositivo_HOR_White.png" alt="">
-                </section>
-                <section id="textContain">
-                    <h1 class="text">Equipe</h1>
-                    <h1 class="text">SAC</h1>
-
-                </section>
-                <section id="buttons">
-                    <button class="button">
-                        <a href="options.html"><p>Informações SAC</p></a>
-                    </button>
-                    <button class="button">
-                        <a href="calculadora.html"><p>Valores cursos</p></a>
-                    </button>
-                </section>
-            </div>
-            <div id="sectionRight">
-                <img id="logoR" src="Logo_CursoPositivo_VERT_White.png" alt="">
-            </div>
+        <div id="carrusel">
+          <div id="clockContain">
+            <h1 id="textc">Inicío das aulas:</h1>
+            <div id="countdown"></div>
         </div>
-       <div id="arvore">
-        <img src="christmas-tree.png" alt="">
-       </div>
+        </div>
+        
+        
+
     </main>
-   
     <footer></footer>
+    <script>
+        // Definir a data de destino (05/02/2024 07:10)
+        const targetDate = new Date('2024-02-05T07:10:00');
+    
+        function updateCountdown() {
+          const currentDate = new Date();
+          const timeDifference = targetDate - currentDate;
+    
+          if (timeDifference <= 0) {
+            document.getElementById('countdown').innerHTML = 'As aulas ja iniciarão';
+          } else {
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+    
+            document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+          }
+        }
+    
+        // Atualizar a cada segundo
+        setInterval(updateCountdown, 1000);
+    
+        // Atualizar imediatamente ao carregar a página
+        updateCountdown();
+
+
+        function openFullscreenIframe(pdfSrc) {
+            var fullscreenIframeContainer = document.getElementById('fullscreenIframeContainer');
+            var fullscreenIframe = document.getElementById('fullscreenIframe');
+
+            fullscreenIframe.src = pdfSrc;
+            fullscreenIframeContainer.style.display = 'block';
+        }
+
+        function closeFullscreenIframe() {
+            var fullscreenIframeContainer = document.getElementById('fullscreenIframeContainer');
+            var fullscreenIframe = document.getElementById('fullscreenIframe');
+
+            fullscreenIframe.src = '';
+            fullscreenIframeContainer.style.display = 'none';
+        }
+      </script>
 </body>
+
 </html>
