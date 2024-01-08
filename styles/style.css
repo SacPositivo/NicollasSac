@@ -236,3 +236,12 @@ body {
 .text-set{
     font-size: 20px;
 }
+
+
+#bv-image{
+    width: 50vw;
+    object-fit: contain;
+    margin: auto;
+    height: 50vh;
+    margin-bottom: 100px;
+}
