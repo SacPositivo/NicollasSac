@@ -239,9 +239,9 @@ body {
 
 
 #bv-image{
-    width: 50vw;
+    width: 100vw;
     object-fit: contain;
     margin: auto;
     height: 50vh;
-    margin-bottom: 100px;
+    margin-bottom: 25px;
 }
