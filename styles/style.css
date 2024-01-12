@@ -1,6 +1,10 @@
 /* Gerais */
 body{
     font-family: sans-serif;
+    overflow-x: hidden;
+}
+.non{
+    text-decoration: none;
 }
 
 .row{
@@ -52,12 +56,11 @@ header, .navbar{
 
 
 #carouselDemo, .carousel-item{
-    height: 70vh;
-    width: 70vw;
+    height: 40vh;
+    width: 30vw;
 }
 #carouselDemo{
     margin: auto;
-    margin-top: 10%;
 }
 .carousel-inner{
     border-radius: 14px;
@@ -78,8 +81,7 @@ header, .navbar{
     color: #fff;
     text-transform: uppercase;
     width: 200px;
-    height: 60px;
-    padding: 10px 20px;
+    height: 40px;
     border-radius: 30px;
     border: 3px solid transparent;
     transition: .5s;
@@ -95,7 +97,7 @@ header, .navbar{
 }
 
 #carouselDemo, .carousel-caption{
-    top: 55%;
+    top: 5%;
 }
 
 .caption-temp{
@@ -108,8 +110,12 @@ header, .navbar{
     color: #fff;
 }
 
-#countdown{
-    font-size: 80px;
+.ctn{
+    font-size: 20px;
+    color: #fff;
+    margin-left: 70%;
+    margin-top: 8%;
+    
 }
 
 
@@ -152,13 +158,14 @@ header, .navbar{
     margin: 0 0 20% 0;
     cursor: pointer;
 }
-.card-title{
+.card-title {
     transition: all .3s;
+}
 
+.card:hover .card-title {
+    color: #f69209; /* Altere ou remova esta parte se não desejar a mudança de cor */
 }
-.card:hover .card-title{
-    color: #f69209;
-}
+
 
 /* Estilizando a barra de rolagem no Chrome, Safari e Edge */
 /* Estilizando a barra de rolagem no Chrome, Safari e Edge */
@@ -206,9 +213,10 @@ body {
 }
 
 .custom-card {
-    margin: 0 70px; /* Adicione ou ajuste a margem conforme necessário */
+    margin: 0; /* Em vez de uma margem fixa, ajuste conforme necessário */
     width: 100%;
 }
+
 
 
 .col-md-3 a{
@@ -238,10 +246,188 @@ body {
 }
 
 
-#bv-image{
-    width: 100vw;
-    object-fit: contain;
-    margin: auto;
-    height: 50vh;
-    margin-bottom: 25px;
+.custom-shape-divider-bottom-1705026646 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
 }
+
+.custom-shape-divider-bottom-1705026646 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 142px;
+}
+
+.custom-shape-divider-bottom-1705026646 .shape-fill {
+    fill: #FFFFFF;
+}
+
+#waves{
+    background-color: #f69209;
+    height: 70vh;
+    width: 100vw;
+    position: relative;
+}
+
+
+#wavTitle{
+    padding-top: 5%;
+    padding-left: 5%;
+    font-size: 5em;
+    color: #fff;
+}
+
+
+
+#hand{
+    object-fit: contain;
+    width: 100%;
+}
+
+
+@media (max-width: 900px) {
+    /* Estilos para dispositivos menores */
+    #wavTitle{
+        padding-top: 12%;
+        padding-left: 5%;
+        font-size: 3em;
+        color: #fff;
+    }
+    p, li {
+        max-width: 100%;
+    }
+    body {
+        font-size: 14px;
+    }
+    .main-btn{
+        background-color: #f69209;
+        color: #fff;
+        text-transform: uppercase;
+        width: 200px;
+        height: 40px;
+        border-radius: 30px;
+        border: 3px solid transparent;
+        transition: .5s;
+        margin-bottom: 30px;
+        text-decoration: none;
+    }
+    .ctn{
+    font-size: 15px;
+    color: #fff;
+    margin-left: 55%;
+    margin-top: 5%;
+    }
+    /* Adicione mais estilos conforme necessário */
+}
+
+@media (max-width: 764px) {
+    /* Estilos para dispositivos menores */
+    #wavTitle{
+        padding-top: 15%;
+        padding-left: 5%;
+        font-size: 3em;
+        color: #fff;
+    }
+    p, li {
+        max-width: 100%;
+    }
+    body {
+        font-size: 14px;
+    }
+    .main-btn{
+        background-color: #f69209;
+        color: #fff;
+        text-transform: uppercase;
+        width: 200px;
+        height: 40px;
+        border-radius: 30px;
+        border: 3px solid transparent;
+        transition: .5s;
+        margin-bottom: 30px;
+        text-decoration: none;
+    }
+    .ctn{
+    font-size: 15px;
+    color: #fff;
+    margin-left: 55%;
+    margin-top: 5%;
+    }
+    /* Adicione mais estilos conforme necessário */
+}
+
+@media (max-width: 700px) {
+    /* Estilos para dispositivos menores */
+    #wavTitle{
+        padding-top: 15%;
+        padding-left: 5%;
+        font-size: 3em;
+        color: #fff;
+    }
+    p, li {
+        max-width: 100%;
+    }
+    body {
+        font-size: 14px;
+    }
+    .main-btn{
+        background-color: #f69209;
+        color: #fff;
+        text-transform: uppercase;
+        width: 200px;
+        height: 40px;
+        border-radius: 30px;
+        border: 3px solid transparent;
+        transition: .5s;
+        margin-bottom: 30px;
+        text-decoration: none;
+    }
+    .ctn{
+    font-size: 15px;
+    color: #fff;
+    margin-left: 50%;
+    margin-top: 8%;
+    }
+    /* Adicione mais estilos conforme necessário */
+}
+
+
+@media (max-width: 530px) {
+    /* Estilos para dispositivos menores */
+    #wavTitle{
+        padding-top: 20%;
+        padding-left: 5%;
+        font-size: 2em;
+        color: #fff;
+    }
+    p, li {
+        max-width: 100%;
+    }
+    body {
+        font-size: 14px;
+    }
+    .main-btn{
+        background-color: #f69209;
+        color: #fff;
+        text-transform: uppercase;
+        width: 200px;
+        height: 40px;
+        border-radius: 30px;
+        border: 3px solid transparent;
+        transition: .5s;
+        margin-bottom: 30px;
+        text-decoration: none;
+    }
+    .ctn{
+    font-size: 15px;
+    color: #fff;
+    margin-left: 30%;
+    margin-top: 8%;
+    }
+    /* Adicione mais estilos conforme necessário */
+}
+

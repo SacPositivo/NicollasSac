@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./styles/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -27,37 +27,34 @@
         </nav>
     </header>
     <main>
-        <div class="carousel slide" id="carouselDemo" data-bs-wrap="true" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="3000">
-                    <img src="./assets/boa-vista1.png" width="100%" height="100%" alt="" id="img1">
-                    <div class="carousel-caption caption-bv">
-                        <h1>Nova Unidade</h1>
-                        <p>Unidade inaugurada no Boa Vista</p>
-                        <a href="src/secondaryPages/bv.html" class="main-btn">conheça a unidade</a>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="5000">
-                    <img src="./assets/temp.jpeg" width="100%" height="100%" alt="" id="img2">
-                    <div class="carousel-caption caption-temp">
-                        <p>INICIO DAS AULAS:</p>
-                        <h1 id="countdown">bah</h1>
-                    </div>
-                </div>
+        <div id="waves">
+            <h1 id="wavTitle">Bem vindo ao CIA</h1>
+            <h1 class="ctn d-inline-block">Tempo até as aulas: <span id="countdown"></span></h1>
+            <div class="custom-shape-divider-bottom-1705026646">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <!-- Adicione os caminhos das ondas aqui -->
+                        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+                        </svg>
+                </svg>
             </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselDemo" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselDemo" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
-
-            <div class="carousel-indicators">
-                <button type="button" class="active" data-bs-target="#carouselDemo" data-bs-slide-to="0"></button>
-                <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="1"></button>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>UFPR: Mudanças na Lista de Espera</h1>
+                    <p>A UFPR divulgou ontem, dia 10/01, algumas mudanças na lista de espera do vestibular. Agora, os alunos devem realizar um registro acadêmico antecipado para participar das chamadas complementares. Fique atento às datas:<br>17/01- Resultado Final (14h);<br>
+                        24/01 – Divulgação dos candidatos que precisam enviar os documentos necessários para o registro acadêmico na primeira chamada complementar, ou seja, apenas os candidatos não aprovados na chamada geral;<br>
+                        25 a 29/01 – Prazo para envio dessa documentação de registro acadêmico, através do site Núcleo de Concursos (NC).</p>
+                    <a href="https://ufpr.br/ufpr-anuncia-mudanca-no-sistema-de-lista-de-espera-do-vestibular-e-mais-vagas-para-o-pss-enem/" target="_blank"><button class="main-btn">saiba mais</button></a>
+                </div>
+                <div class="col-md-6">
+                    <img id="hand" src="assets/download.jpg" alt="" class="img-fluid">
+                </div>
             </div>
         </div>
     </main>
-    </body>
+</body>
 </html>

@@ -12,7 +12,7 @@
 <body>
     <header class="container" id="nav-container">
         <nav class="navbar navbar-expand-md fixed-top navbar-dark" style="background-color: #f69209;">
-            <a href="../../index.html" class="navbar-brand">
+            <a href="../index.html" class="navbar-brand">
                 <img id="logo" src="../../assets/logoHOR.png" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,85 +27,86 @@
         </nav>
     </header>
     <main>
-        <div id="contain-page">
-            <div class="container">
+        <div id="contain-page" class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="main-title text-center" id="info-titleset">SETORES</h3>
+                </div>
+            </div>
+            <div id="setor-area">
                 <div class="row">
                     <div class="col-12">
-                        <h3 class="main-title text-center" id="info-titleset">SETORES</h3>
+                        <button class="btn-vlt" onclick="voltar('setores')">voltar</button>
                     </div>
                 </div>
-                <div id="setor-area">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <button class="btn-vlt" onclick="voltar('setores')">voltar</button>
-                            </div>
-                        </div>
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
                         <p id="info-oneset" class="mb-4 text-set">Conteúdo do primeiro parágrafo</p>
                         <p id="info-twoset" class="mt-4 text-set">Conteúdo do segundo parágrafo</p>
                     </div>
                 </div>
-                <div class="row" id="cards-set">
-                    <div class="col-md-3">
-                        <div class="card" onclick="mudarSet('CONTATOS GERAIS')">
-                            <img src="../../assets/cards/sup.png" alt="" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">CONTATOS GERAIS</h5>
-                            </div>
+            </div>
+            <div class="row" id="cards-set">
+                <div class="col-md-3">
+                    <div class="card" onclick="mudarSet('CONTATOS GERAIS')">
+                        <img src="../../assets/cards/sup.png" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">CONTATOS GERAIS</h5>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card" onclick="mudarSet('MATRICULA')">
-                            <img src="../../assets/cards/sup.png" alt="" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">MATRICULA</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" onclick="mudarSet('SECRETARIA')">
-                            <img src="../../assets/cards/sup.png" alt="" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">SECRETARIA</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" onclick="mudarSet('RECEPÇÃO')">
-                            <img src="../../assets/cards/sup.png" alt="" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">RECEPÇÃO</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" onclick="mudarSet('APOSTILARIA')">
-                            <img src="../../assets/cards/sup.png" alt="" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">APOSTILARIA</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" onclick="mudarSet('FINANCEIRO')">
-                            <img src="../../assets/cards/sup.png" alt="" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">FINANCEIRO</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card" onclick="mudarSet('VESTIBULAR')">
-                            <img src="../../assets/cards/sup.png" alt="" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">VESTIBULAR</h5>
-                            </div>
-                        </div>
-                    </div>
-                    
                 </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="mudarSet('MATRICULA')">
+                        <img src="../../assets/cards/sup.png" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">MATRICULA</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="mudarSet('SECRETARIA')">
+                        <img src="../../assets/cards/sup.png" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">SECRETARIA</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="mudarSet('RECEPÇÃO')">
+                        <img src="../../assets/cards/sup.png" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">RECEPÇÃO</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Adicione mais blocos para cada card -->
+                <div class="col-md-3">
+                    <div class="card" onclick="mudarSet('APOSTILARIA')">
+                        <img src="../../assets/cards/sup.png" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">APOSTILARIA</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="mudarSet('FINANCEIRO')">
+                        <img src="../../assets/cards/sup.png" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">FINANCEIRO</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" onclick="mudarSet('VESTIBULAR')">
+                        <img src="../../assets/cards/sup.png" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">VESTIBULAR</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Adicione mais blocos para cada card -->
             </div>
         </div>
     </main>
-    </body>
+</body>
 </html>
