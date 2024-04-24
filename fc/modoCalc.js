@@ -127,6 +127,66 @@ document.addEventListener("DOMContentLoaded", function () {
            varTurno: 'manha',
            varSede: 'Boa_Vista'
        },
+
+       //Semi 2
+
+       {
+        valorEscola: 9240.00,
+        valorMaterial: 1512.00, 
+        varCurso: 'Semi2',
+        varTurno: 'manha',
+        varSede: 'Vicente_Machado'
+    },
+    {
+        valorEscola: 6006.00,
+        valorMaterial: 1512.00, 
+        varCurso: 'Semi2',
+        varTurno: 'noite',
+        varSede: 'Vicente_Machado'
+    },
+    {
+        valorEscola: 5460.00,
+        valorMaterial: 1512.00, 
+        varCurso: 'Semi2',
+        varTurno: '',
+        varSede: 'Vicente_Machado'
+    },
+
+    // Semi2 PG
+    {
+        valorEscola: 5880.00,
+        valorMaterial: 1512.00, 
+        varCurso: 'Semi2',
+        varTurno: 'manha',
+        varSede: 'Ponta Grossa'
+    },
+    {
+        valorEscola: 4704.00,
+        valorMaterial: 1512.00, 
+        varCurso: 'Semi2',
+        varTurno: 'tarde',
+        varSede: 'Ponta Grossa'
+    },
+
+
+
+    {
+        valorEscola: 6552.00,
+        valorMaterial: 1512.00, 
+        varCurso: 'Semi2',
+        varTurno: 'manha',
+        varSede: 'Joinville'
+    },
+
+    {
+        valorEscola: 5460.00,
+        valorMaterial: 1512.00, 
+        varCurso: 'Semi2',
+        varTurno: 'EAD',
+        varSede: ''
+    },
+
+
     ];        
        
        
@@ -157,6 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
            let turnos = document.getElementById("turnos");
            let sede = document.getElementById('sede').value;
            let adicionais = document.getElementById("adicionais");
+
        
            if(sede != "" && sede != "vazio"){
                turnos.style.display = "block"
@@ -176,42 +237,55 @@ document.addEventListener("DOMContentLoaded", function () {
        calc.addEventListener('click', calcular)
        
        
-       function calcular () {
-        document.getElementById('primeiroValor').textContent = 'Erro, turno inexistente'
-           let desconto = document.getElementById('desconto').value
-           let parcelamento = parseInt(document.getElementById('parcelamento').value, 10);
-           let adicionaisElement = document.querySelector('input[name="add"]:checked');
-           let adicionais = 0;
-       
-           if (adicionaisElement !== null) {
-               adicionais = adicionaisElement.value
-               if (adicionais == "Integral"){
-                   adicionais = 6435.00
-               }else{
-                   adicionais = 1201.20
-               }
-           }else{
-               adicionais = 0
-           }
-           if(state === 0){
-           if (desconto > 100 && state === 0){
-               alert("desconto incomum")
-           }
-           else if(desconto == '' &&  parcelamento > 1){
-               sem_desconto(parcelamento, adicionais)
-           }else if(desconto != '' && parcelamento > 1){
-               com_desconto(parcelamento,desconto, adicionais)
-           }else if(desconto == '' && parcelamento == 1){
-               a_vista(parcelamento, adicionais)
-           }else if(desconto != '' && parcelamento == 1){
-               a_vista_com_desconto(parcelamento,desconto, adicionais)
-           }
-        }else if (state === 1){
-            calcularInverso(parcelamento,adicionais,desconto)
+       function calcular() {
+        document.getElementById('primeiroValor').textContent = 'Erro, turno inexistente';
+        let desconto = document.getElementById('desconto').value;
+        let parcelamento = parseInt(document.getElementById('parcelamento').value, 10);
+        let adicionaisElement = document.querySelector('input[name="add"]:checked');
+        let adicionais = 0;
+        let curso = document.getElementById('curso').value;
+        
+        if(curso == "Semi2" && parcelamento > 8){
+            return alert("Parcelamento invalido")
         }
-       
-       }
-       console.log(adicionais)
+    
+        if (adicionaisElement !== null) {
+            adicionais = adicionaisElement.value;
+            if (adicionais == "Integral") {
+                if(curso == "Semi2"){
+                    return alert("Semi não tem integral")
+                }else{
+                    adicionais = 6435.00;
+                }
+            } else {
+                if (curso == "Semi2") {
+                    adicionais = 1201.20;
+                } else {
+                    adicionais = 604.80;
+                }
+            }
+        } else {
+            adicionais = 0;
+        }
+        
+      
+        if (state === 0) {
+            if (desconto > 100 && state === 0) {
+                alert("desconto incomum");
+            } else if (desconto == '' && parcelamento > 1) {
+                sem_desconto(parcelamento, adicionais);
+            } else if (desconto != '' && parcelamento > 1) {
+                com_desconto(parcelamento, desconto, adicionais);
+            } else if (desconto == '' && parcelamento == 1) {
+                a_vista(parcelamento, adicionais);
+            } else if (desconto != '' && parcelamento == 1) {
+                a_vista_com_desconto(parcelamento, desconto, adicionais);
+            }
+        } else if (state === 1) {
+            calcularInverso(parcelamento, adicionais, desconto);
+        }
+    }
+    
        
        
        
