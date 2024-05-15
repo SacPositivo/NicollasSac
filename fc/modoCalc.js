@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
         varSede: 'Vicente_Machado'
     },
     {
-        valorEscola: 5460.00,
+        valorEscola: 3477.60,
         valorMaterial: 1512.00, 
         varCurso: 'Semi2',
         varTurno: '',
@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
 
     {
-        valorEscola: 5460.00,
+        valorEscola: 3477.60,
         valorMaterial: 1512.00, 
         varCurso: 'Semi2',
         varTurno: 'EAD',
