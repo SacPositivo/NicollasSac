@@ -154,14 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Semi2 PG
     {
-        valorEscola: 5880.00,
-        valorMaterial: 1512.00, 
-        varCurso: 'Semi2',
-        varTurno: 'manha',
-        varSede: 'Ponta Grossa'
-    },
-    {
-        valorEscola: 4704.00,
+        valorEscola: 3242.40,
         valorMaterial: 1512.00, 
         varCurso: 'Semi2',
         varTurno: 'tarde',
@@ -261,7 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (curso == "Semi2") {
                     adicionais = 1201.20;
                 } else {
-                    adicionais = 604.80;
+                    adicionais = 403.20;
                 }
             }
         } else {
